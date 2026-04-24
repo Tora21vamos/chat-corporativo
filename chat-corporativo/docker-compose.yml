@@ -1,0 +1,64 @@
+version: "3.8"
+
+services:
+
+  # ── Servidor principal ────────────────────────────────
+  servidor:
+    build: ./servidor
+    container_name: servidor_chat
+    ports:
+      - "9000:9000/udp"    # UDP — mensagens em tempo real
+      - "50051:50051"       # gRPC — histórico
+    volumes:
+      - dados_chat:/app/dados
+    networks:
+      - rede_chat
+    restart: unless-stopped
+
+  # ── Cliente 1 ─────────────────────────────────────────
+  cliente1:
+    build: ./cliente
+    container_name: cliente_1
+    depends_on:
+      - servidor
+    environment:
+      - SERVIDOR_HOST=servidor
+    networks:
+      - rede_chat
+    stdin_open: true
+    tty: true
+
+  # ── Cliente 2 ─────────────────────────────────────────
+  cliente2:
+    build: ./cliente
+    container_name: cliente_2
+    depends_on:
+      - servidor
+    environment:
+      - SERVIDOR_HOST=servidor
+    networks:
+      - rede_chat
+    stdin_open: true
+    tty: true
+
+  # ── Cliente 3 ─────────────────────────────────────────
+  cliente3:
+    build: ./cliente
+    container_name: cliente_3
+    depends_on:
+      - servidor
+    environment:
+      - SERVIDOR_HOST=servidor
+    networks:
+      - rede_chat
+    stdin_open: true
+    tty: true
+
+# ── Volume persistente ────────────────────────────────
+volumes:
+  dados_chat:
+
+# ── Rede interna ──────────────────────────────────────
+networks:
+  rede_chat:
+    driver: bridge

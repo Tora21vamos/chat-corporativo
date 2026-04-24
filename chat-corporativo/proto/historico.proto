@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+// Definição do serviço gRPC para busca de histórico
+service HistoricoService {
+  rpc BuscarHistorico (PedidoHistorico) returns (RespostaHistorico);
+  rpc BuscarPorUtilizador (PedidoUtilizador) returns (RespostaHistorico);
+}
+
+message PedidoHistorico {
+  int32 quantidade = 1;
+}
+
+message PedidoUtilizador {
+  string nome = 1;
+}
+
+message Mensagem {
+  string remetente = 1;
+  string conteudo = 2;
+  string timestamp = 3;
+}
+
+message RespostaHistorico {
+  repeated Mensagem mensagens = 1;
+}

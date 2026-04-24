@@ -1,0 +1,11 @@
+{
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "editor.fontSize": 14,
+  "editor.tabSize": 4,
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  "python.linting.enabled": true
+}

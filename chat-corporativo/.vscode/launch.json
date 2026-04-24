@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "▶ Executar Servidor UDP",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/servidor/servidor.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "▶ Executar Servidor gRPC",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/servidor/historico_servidor.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "▶ Executar Cliente",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/cliente/cliente.py",
+      "console": "integratedTerminal",
+      "env": {
+        "SERVIDOR_HOST": "localhost"
+      }
+    }
+  ]
+}
