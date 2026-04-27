@@ -1,7 +1,6 @@
-# 💬 Chat Corporativo com Mensagens Persistentes
-### Grupo 2 — Sistemas Distribuídos | Licenciatura em Informática — MOZAMBIQUE
+Grupo 2:Chat Corporativo com Mensagens Persistentes
+  cadeira de Sistemas Distribuídos | Licenciatura em Informática — 4 anos pós-laboral 
 
----
 
 ## 📁 Estrutura do Projeto
 
@@ -106,9 +105,8 @@ SERVIDOR_HOST=localhost python cliente.py
 
 ## 👥 Grupo 2
 
-- Nome 1
-- Nome 2
-- TELES JULIO
+- Nome Manuel João 
+- Nome Manuel do Rosário 
+- Nome Teles maguizimane 
 
-**Data de Entrega:** 7 de Maio de 2026
-**Link GitHub:** (adicionar aqui)
+
